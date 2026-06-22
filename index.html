@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тамерлан & Диана — Приглашение на свадьбу</title>
+  <meta name="description" content="Приглашение на свадьбу Тамерлана и Дианы — 26 сентября 2026, Нальчик">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Экран открытия -->
+  <div id="intro-screen" class="intro-screen">
+    <div class="intro-content">
+      <p class="intro-label">Приглашение на свадьбу</p>
+      <h1 class="intro-names">Тамерлан <span>&</span> Диана</h1>
+      <p class="intro-date">26 · 09 · 2026</p>
+      <button id="open-btn" class="open-btn" type="button">
+        <span>Нажмите, чтобы открыть</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </button>
+    </div>
+    <div class="intro-floral intro-floral--left"></div>
+    <div class="intro-floral intro-floral--right"></div>
+  </div>
+
+  <!-- Музыка -->
+  <button id="music-toggle" class="music-toggle" type="button" aria-label="Включить музыку" hidden>
+    <svg class="icon-music-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    <svg class="icon-music-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" hidden><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+  </button>
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <main id="main-content" hidden>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg" style="background-image: url('assets/photos/фото.jpg')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="hero-sub">Приглашение на свадьбу</p>
+        <h1 class="hero-names">Тамерлан <span>&</span> Диана</h1>
+        <p class="hero-date">26 сентября 2026</p>
+      </div>
+      <div class="scroll-hint">
+        <span>Листайте вниз</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </section>
+
+    <!-- Приглашение -->
+    <section class="section section--green">
+      <div class="container">
+        <div class="section-inner reveal">
+          <h2 class="section-title script">Дорогие, любимые и самые родные!</h2>
+          <p class="section-text">
+            Один день в этом году будет для нас особенным, и мы хотим провести его в кругу близких и друзей!
+            С большим удовольствием приглашаем Вас на замечательный праздник — нашу свадьбу.
+          </p>
+        </div>
+      </div>
+      <div class="floral-divider"></div>
+    </section>
+
+    <!-- Обратный отсчёт -->
+    <section class="section section--cream countdown-section">
+      <div class="container">
+        <div class="section-inner reveal">
+          <p class="countdown-label">До свадьбы осталось</p>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span class="countdown-num" id="days">00</span>
+              <span class="countdown-unit">дней</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="hours">00</span>
+              <span class="countdown-unit">часов</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="minutes">00</span>
+              <span class="countdown-unit">минут</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="seconds">00</span>
+              <span class="countdown-unit">секунд</span>
+            </div>
+          </div>
+          <p class="wedding-date-big">26 · 09 · 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Место -->
+    <section class="section section--green location-section">
+      <div class="container">
+        <div class="section-inner reveal">
+          <h2 class="section-title script">Место проведения</h2>
+          <p class="section-text">
+            Трогательная церемония и последующий уютный вечер будут проходить в г. Нальчик
+            в ресторане «White River Hall» по адресу: ул. Биттирова, 100.
+          </p>
+          <p class="venue-name">White River Hall</p>
+          <p class="venue-address">Кабардино-Балкарская Республика, Нальчик, микрорайон Долинск</p>
+          <a href="https://yandex.ru/maps/org/uayt_river_kholl/40581730526?si=2m25xadxft90k256hy0t1r3v94" target="_blank" rel="noopener" class="btn btn--light">Посмотреть на карте</a>
+        </div>
+        <div class="map-wrap reveal">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=43.607000%2C43.485000&z=16&pt=43.607000%2C43.485000&l=map"
+            width="100%"
+            height="300"
+            frameborder="0"
+            allowfullscreen
+            title="Карта — White River Hall"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Тайминг -->
+    <section class="section section--cream timeline-section">
+      <div class="container">
+        <div class="section-inner reveal">
+          <h2 class="section-title script">Программа дня</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-time">15:00</div>
+            <div class="timeline-content">
+              <h3>Welcome</h3>
+              <p>Сбор гостей, интерактивная программа и приветственный фуршет.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-time">16:00</div>
+            <div class="timeline-content">
+              <h3>Унэишэ. Щауэишэж.</h3>
+              <p>Красивые традиции нашей семьи.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-time">17:00</div>
+            <div class="timeline-content">
+              <h3>Выездная регистрация</h3>
+              <p>Церемония и фотосессия с молодожёнами.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-time">18:00</div>
+            <div class="timeline-content">
+              <h3>Торжественный ужин</h3>
+              <p>Начало праздника.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Дресс-код -->
+    <section class="section section--image dresscode-section">
+      <div class="dresscode-bg" style="background-image: url('assets/photos/дресскод.jpg')"></div>
+      <div class="dresscode-overlay"></div>
+      <div class="container">
+        <div class="section-inner reveal">
+          <h2 class="section-title script">Дресс-код</h2>
+          <p class="section-text">
+            Мы рады сообщить, что дресс-кода на нашей свадьбе не будет. Тем не менее, мы просим
+            воздержаться от ярких цветов и броских принтов. Будем очень рады, если отдадите
+            предпочтение спокойным и нейтральным тонам.
+          </p>
+          <div class="color-palette">
+            <span class="color-swatch" style="--swatch: #1B3022" title="Тёмно-зелёный"></span>
+            <span class="color-swatch" style="--swatch: #4A6741" title="Травянистый"></span>
+            <span class="color-swatch" style="--swatch: #F5F3EE" title="Белый"></span>
+            <span class="color-swatch" style="--swatch: #C8BFB0" title="Бежевый"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Пожелания -->
+    <section class="section section--green wishes-section">
+      <div class="container">
+        <div class="wishes-grid">
+          <div class="wish-card reveal">
+            <div class="wish-icon">🎁</div>
+            <h3 class="wish-title script">Подарки</h3>
+            <p>Ваше присутствие в этот особенный день — лучший подарок для нас. Если же Вы хотите порадовать нас дополнительно, будем очень признательны за денежный подарок в конверте, который поможет реализовать наши совместные мечты и планы.</p>
+          </div>
+          <div class="wish-card reveal">
+            <div class="wish-icon">🌿</div>
+            <h3 class="wish-title script">Вместо цветов</h3>
+            <p>Ваше внимание — самый ценный подарок для нас. Мы просим вас воздержаться от покупки цветов: к сожалению, мы не успеем насладиться их красотой в полной мере. Если вы хотели порадовать нас букетом, мы будем благодарны, если вы направите этот бюджет на участие в наших праздничных интерактивах.</p>
+          </div>
+          <div class="wish-card reveal">
+            <div class="wish-icon">👶</div>
+            <h3 class="wish-title script">Маленькие гости</h3>
+            <p>Мы очень любим всех наших маленьких родственников. Поэтому будем рады видеть их в числе важных гостей.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Детали -->
+    <section class="section section--cream details-section">
+      <div class="container">
+        <div class="section-inner reveal">
+          <h2 class="section-title script">Детали</h2>
+          <div class="details-list">
+            <div class="detail-item">
+              <h4>Телеграм-чат праздника</h4>
+              <p>Узнайте дополнительную информацию, поделитесь фотографиями и видео в день и после свадьбы.</p>
+              <a href="https://t.me/+uewv_asulvAwMTdi" target="_blank" rel="noopener" class="btn btn--dark">Перейти в чат</a>
+            </div>
+            <div class="detail-item">
+              <h4>Без «Горько!»</h4>
+              <p>Будем благодарны Вам за сохранение уютного семейного вечера и отсутствия криков «Горько!».</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Организатор -->
+    <section class="section section--image organizer-section">
+      <div class="organizer-bg" style="background-image: url('assets/photos/организатор.jpg')"></div>
+      <div class="organizer-overlay"></div>
+      <div class="container">
+        <div class="section-inner reveal">
+          <h2 class="section-title script">Организатор</h2>
+          <p class="section-text">
+            Если Вы подготовили для нас сюрприз или в случае возникновения вопросов,
+            всегда можно обратиться за помощью и согласованием к нашему свадебному организатору.
+          </p>
+          <a href="tel:+79094376880" class="organizer-phone">+7 909 437-68-80</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Анкета -->
+    <section class="section section--green form-section" id="rsvp">
+      <div class="container">
+        <div class="section-inner reveal">
+          <h2 class="section-title script">Анкета гостя</h2>
+          <p class="section-text form-intro">
+            Пожалуйста, подтвердите ваше присутствие, заполнив анкету ниже.
+            Это поможет нам лучше подготовиться к празднику.
+          </p>
+        </div>
+
+        <form id="rsvp-form" class="rsvp-form reveal" action="https://formsubmit.co/dians.ts.29.09@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Анкета гостя — свадьба Тамерлан & Диана">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="form-group">
+            <label for="name">Ваши имя и фамилия *</label>
+            <input type="text" id="name" name="Имя и фамилия" required placeholder="Иван Иванов">
+          </div>
+
+          <div class="form-group">
+            <label for="companions">Если будете с парой / семьёй, укажите все имена</label>
+            <input type="text" id="companions" name="Сопровождающие" placeholder="Мария Иванова, Петр Иванов">
+          </div>
+
+          <div class="form-group">
+            <label>Планируете ли Вы присутствовать на свадьбе? *</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="Присутствие" value="Да, буду" required> Да, буду</label>
+              <label class="radio-label"><input type="radio" name="Присутствие" value="К сожалению, не смогу"> К сожалению, не смогу</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Как добираетесь? *</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="Транспорт" value="Необходимо место в автобусе" required> Необходимо место в автобусе</label>
+              <label class="radio-label"><input type="radio" name="Транспорт" value="Добираюсь своим ходом"> Добираюсь своим ходом</label>
+              <label class="radio-label"><input type="radio" name="Транспорт" value="Еду на своей машине"> Еду на своей машине</label>
+            </div>
+          </div>
+
+          <div class="form-group" id="passengers-group">
+            <label for="passengers">Если едете на своей машине — сможете взять пассажиров? Сколько?</label>
+            <input type="text" id="passengers" name="Пассажиры в машине" placeholder="Например: могу взять 2 человека">
+          </div>
+
+          <div class="form-group">
+            <label>Нуждаетесь ли в помощи по поиску жилья?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="Жильё" value="Да"> Да</label>
+              <label class="radio-label"><input type="radio" name="Жильё" value="Нет" checked> Нет</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="comments">Ваши комментарии</label>
+            <textarea id="comments" name="Комментарии" rows="3" placeholder="Если есть что-то, что мы не учли — напишите нам"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--light btn--full" id="submit-btn">Отправить анкету</button>
+          <p class="form-note" id="form-status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="footer-bg" style="background-image: url('assets/photos/фото1.jpg')"></div>
+      <div class="footer-overlay"></div>
+      <div class="footer-content reveal">
+        <p class="footer-script script">С любовью,</p>
+        <p class="footer-names script">Тамерлан & Диана</p>
+        <p class="footer-date">26 · 09 · 2026</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
