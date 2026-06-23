@@ -42,8 +42,10 @@
       <div class="hero-overlay"></div>
       <div class="hero-content reveal">
         <p class="hero-sub">Приглашение на свадьбу</p>
-        <h1 class="hero-names">Тамерлан <span>&</span> Диана</h1>
-        <p class="hero-date">26 сентября 2026</p>
+        <div class="hero-names-block">
+          <h1 class="hero-names">Тамерлан <span>&</span> Диана</h1>
+          <p class="hero-date">26 сентября 2026</p>
+        </div>
       </div>
       <div class="scroll-hint">
         <span>Листайте вниз</span>
@@ -88,7 +90,49 @@
               <span class="countdown-unit">секунд</span>
             </div>
           </div>
-          <p class="wedding-date-big">26 · 09 · 2026</p>
+          <div class="wedding-calendar reveal">
+            <p class="calendar-month">Сентябрь 2026</p>
+            <div class="calendar-grid">
+              <span class="calendar-dow">Пн</span>
+              <span class="calendar-dow">Вт</span>
+              <span class="calendar-dow">Ср</span>
+              <span class="calendar-dow">Чт</span>
+              <span class="calendar-dow">Пт</span>
+              <span class="calendar-dow">Сб</span>
+              <span class="calendar-dow">Вс</span>
+              <span class="calendar-day empty"></span>
+              <span class="calendar-day">1</span>
+              <span class="calendar-day">2</span>
+              <span class="calendar-day">3</span>
+              <span class="calendar-day">4</span>
+              <span class="calendar-day">5</span>
+              <span class="calendar-day">6</span>
+              <span class="calendar-day">7</span>
+              <span class="calendar-day">8</span>
+              <span class="calendar-day">9</span>
+              <span class="calendar-day">10</span>
+              <span class="calendar-day">11</span>
+              <span class="calendar-day">12</span>
+              <span class="calendar-day">13</span>
+              <span class="calendar-day">14</span>
+              <span class="calendar-day">15</span>
+              <span class="calendar-day">16</span>
+              <span class="calendar-day">17</span>
+              <span class="calendar-day">18</span>
+              <span class="calendar-day">19</span>
+              <span class="calendar-day">20</span>
+              <span class="calendar-day">21</span>
+              <span class="calendar-day">22</span>
+              <span class="calendar-day">23</span>
+              <span class="calendar-day">24</span>
+              <span class="calendar-day">25</span>
+              <span class="calendar-day calendar-day--wedding">26</span>
+              <span class="calendar-day">27</span>
+              <span class="calendar-day">28</span>
+              <span class="calendar-day">29</span>
+              <span class="calendar-day">30</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -98,17 +142,18 @@
       <div class="container">
         <div class="section-inner reveal">
           <h2 class="section-title script">Место проведения</h2>
-          <p class="section-text">
-            Трогательная церемония и последующий уютный вечер будут проходить в г. Нальчик
-            в ресторане «White River Hall» по адресу: ул. Биттирова, 100.
-          </p>
-          <p class="venue-name">White River Hall</p>
-          <p class="venue-address">Кабардино-Балкарская Республика, Нальчик, микрорайон Долинск</p>
+          <div class="venue-text">
+            <p>Трогательная церемония и последующий уютный вечер будут проходить:</p>
+            <p class="venue-line">г. Нальчик</p>
+            <p class="venue-line venue-line--name">Ресторан «White River Hall»</p>
+            <p class="venue-line">по адресу: ул. Биттирова, 100</p>
+            <p class="venue-line venue-line--region">Кабардино-Балкарская Республика,<br>Нальчик, микрорайон Долинск</p>
+          </div>
           <a href="https://yandex.ru/maps/org/uayt_river_kholl/40581730526?si=2m25xadxft90k256hy0t1r3v94" target="_blank" rel="noopener" class="btn btn--light">Посмотреть на карте</a>
         </div>
         <div class="map-wrap reveal">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=43.607000%2C43.485000&z=16&pt=43.607000%2C43.485000&l=map"
+            src="https://yandex.ru/map-widget/v1/?oid=40581730526&z=16&l=map"
             width="100%"
             height="300"
             frameborder="0"
@@ -127,28 +172,28 @@
         </div>
         <div class="timeline">
           <div class="timeline-item reveal">
-            <div class="timeline-time">15:00</div>
+            <span class="timeline-time-bg">15:00</span>
             <div class="timeline-content">
               <h3>Welcome</h3>
               <p>Сбор гостей, интерактивная программа и приветственный фуршет.</p>
             </div>
           </div>
           <div class="timeline-item reveal">
-            <div class="timeline-time">16:00</div>
+            <span class="timeline-time-bg">16:00</span>
             <div class="timeline-content">
               <h3>Унэишэ. Щауэишэж.</h3>
               <p>Красивые традиции нашей семьи.</p>
             </div>
           </div>
           <div class="timeline-item reveal">
-            <div class="timeline-time">17:00</div>
+            <span class="timeline-time-bg">17:00</span>
             <div class="timeline-content">
               <h3>Выездная регистрация</h3>
               <p>Церемония и фотосессия с молодожёнами.</p>
             </div>
           </div>
           <div class="timeline-item reveal">
-            <div class="timeline-time">18:00</div>
+            <span class="timeline-time-bg">18:00</span>
             <div class="timeline-content">
               <h3>Торжественный ужин</h3>
               <p>Начало праздника.</p>
@@ -159,9 +204,11 @@
     </section>
 
     <!-- Дресс-код -->
-    <section class="section section--image dresscode-section">
-      <div class="dresscode-bg" style="background-image: url('assets/photos/дресскод.jpg')"></div>
-      <div class="dresscode-overlay"></div>
+    <section class="section section--green dresscode-section">
+      <div class="deco-circles" aria-hidden="true">
+        <span class="deco-circle deco-circle--1"></span>
+        <span class="deco-circle deco-circle--2"></span>
+      </div>
       <div class="container">
         <div class="section-inner reveal">
           <h2 class="section-title script">Дресс-код</h2>
@@ -182,6 +229,12 @@
 
     <!-- Пожелания -->
     <section class="section section--green wishes-section">
+      <div class="deco-florals" aria-hidden="true">
+        <svg class="deco-flower deco-flower--tl" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="8" fill="rgba(255,255,255,0.15)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(0 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(72 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(144 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(216 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(288 60 60)"/></svg>
+        <svg class="deco-flower deco-flower--br" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="8" fill="rgba(255,255,255,0.12)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(0 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(72 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(144 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(216 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(288 60 60)"/></svg>
+        <span class="deco-circle deco-circle--3"></span>
+        <span class="deco-circle deco-circle--4"></span>
+      </div>
       <div class="container">
         <div class="wishes-grid">
           <div class="wish-card reveal">
@@ -197,7 +250,7 @@
           <div class="wish-card reveal">
             <div class="wish-icon">👶</div>
             <h3 class="wish-title script">Маленькие гости</h3>
-            <p>Мы очень любим всех наших маленьких родственников. Поэтому будем рады видеть их в числе важных гостей.</p>
+            <p>Мы очень любим всех наших маленьких родственников и будем рады видеть их в числе важных гостей. В знак заботы о них просим в ключевые моменты, когда ведётся видеосъёмка, держать детей за руки.</p>
           </div>
         </div>
       </div>
@@ -234,7 +287,8 @@
             Если Вы подготовили для нас сюрприз или в случае возникновения вопросов,
             всегда можно обратиться за помощью и согласованием к нашему свадебному организатору.
           </p>
-          <a href="tel:+79094376880" class="organizer-phone">+7 909 437-68-80</a>
+          <a href="https://t.me/alisl1303" target="_blank" rel="noopener" class="organizer-contact">@alisl1303</a>
+          <p class="organizer-hint">Напишите в Telegram</p>
         </div>
       </div>
     </section>
@@ -275,7 +329,12 @@
           </div>
 
           <div class="form-group">
-            <label>Как добираетесь? *</label>
+            <label for="travel-city">Как добираетесь до города Нальчик? *</label>
+            <input type="text" id="travel-city" name="Дорога до Нальчика" required placeholder="Например: самолёт, поезд, автомобиль">
+          </div>
+
+          <div class="form-group">
+            <label>Как добираетесь до места торжества? *</label>
             <div class="radio-group">
               <label class="radio-label"><input type="radio" name="Транспорт" value="Необходимо место в автобусе" required> Необходимо место в автобусе</label>
               <label class="radio-label"><input type="radio" name="Транспорт" value="Добираюсь своим ходом"> Добираюсь своим ходом</label>
@@ -311,6 +370,11 @@
     <footer class="footer">
       <div class="footer-bg" style="background-image: url('assets/photos/фото1.jpg')"></div>
       <div class="footer-overlay"></div>
+      <div class="deco-circles deco-circles--footer" aria-hidden="true">
+        <span class="deco-circle deco-circle--5"></span>
+        <span class="deco-circle deco-circle--6"></span>
+        <span class="deco-circle deco-circle--7"></span>
+      </div>
       <div class="footer-content reveal">
         <p class="footer-script script">С любовью,</p>
         <p class="footer-names script">Тамерлан & Диана</p>
