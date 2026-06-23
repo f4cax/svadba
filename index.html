@@ -11,6 +11,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="bloom" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="7" fill="currentColor" opacity="0.35"/>
+      <ellipse cx="60" cy="34" rx="13" ry="21" fill="currentColor" opacity="0.18"/>
+      <ellipse cx="60" cy="34" rx="13" ry="21" fill="currentColor" opacity="0.18" transform="rotate(72 60 60)"/>
+      <ellipse cx="60" cy="34" rx="13" ry="21" fill="currentColor" opacity="0.18" transform="rotate(144 60 60)"/>
+      <ellipse cx="60" cy="34" rx="13" ry="21" fill="currentColor" opacity="0.18" transform="rotate(216 60 60)"/>
+      <ellipse cx="60" cy="34" rx="13" ry="21" fill="currentColor" opacity="0.18" transform="rotate(288 60 60)"/>
+    </symbol>
+  </svg>
   <!-- Экран открытия -->
   <div id="intro-screen" class="intro-screen">
     <div class="intro-content">
@@ -55,6 +65,10 @@
 
     <!-- Приглашение -->
     <section class="section section--green invite-section">
+      <aside class="section-deco section-deco--preset-a" data-theme="dark" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg><svg class="deco-bloom b2"><use href="#bloom"/></svg>
+      </aside>
       <div class="container">
         <div class="section-inner reveal">
           <h2 class="section-title script">Дорогие, любимые и самые родные!</h2>
@@ -68,11 +82,10 @@
 
     <!-- Обратный отсчёт -->
     <section class="section section--cream countdown-section">
-      <div class="deco-circles deco-circles--countdown" aria-hidden="true">
-        <span class="deco-circle deco-circle--c1"></span>
-        <span class="deco-circle deco-circle--c2"></span>
-        <span class="deco-circle deco-circle--c3"></span>
-      </div>
+      <aside class="section-deco section-deco--preset-b" data-theme="light" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span><span class="deco-ring r4"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg>
+      </aside>
       <div class="container">
         <div class="section-inner reveal">
           <p class="countdown-label">До свадьбы осталось</p>
@@ -143,6 +156,10 @@
 
     <!-- Место -->
     <section class="section section--green location-section">
+      <aside class="section-deco section-deco--preset-c" data-theme="dark" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg><svg class="deco-bloom b2"><use href="#bloom"/></svg>
+      </aside>
       <div class="container">
         <div class="section-inner reveal">
           <h2 class="section-title script">Место проведения</h2>
@@ -171,6 +188,10 @@
 
     <!-- Тайминг -->
     <section class="section section--cream timeline-section">
+      <aside class="section-deco section-deco--preset-a" data-theme="light" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span><span class="deco-ring r4"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg>
+      </aside>
       <div class="container">
         <div class="section-inner reveal">
           <h2 class="section-title script">Программа дня</h2>
@@ -210,10 +231,10 @@
 
     <!-- Дресс-код -->
     <section class="section section--green dresscode-section">
-      <div class="deco-circles" aria-hidden="true">
-        <span class="deco-circle deco-circle--1"></span>
-        <span class="deco-circle deco-circle--2"></span>
-      </div>
+      <aside class="section-deco section-deco--preset-b" data-theme="dark" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg><svg class="deco-bloom b2"><use href="#bloom"/></svg>
+      </aside>
       <div class="container">
         <div class="section-inner reveal">
           <h2 class="section-title script">Дресс-код</h2>
@@ -234,12 +255,10 @@
 
     <!-- Пожелания -->
     <section class="section section--green wishes-section">
-      <div class="deco-florals" aria-hidden="true">
-        <svg class="deco-flower deco-flower--tl" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="8" fill="rgba(255,255,255,0.15)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(0 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(72 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(144 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(216 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.08)" transform="rotate(288 60 60)"/></svg>
-        <svg class="deco-flower deco-flower--br" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="8" fill="rgba(255,255,255,0.12)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(0 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(72 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(144 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(216 60 60)"/><ellipse cx="60" cy="35" rx="14" ry="22" fill="rgba(255,255,255,0.06)" transform="rotate(288 60 60)"/></svg>
-        <span class="deco-circle deco-circle--3"></span>
-        <span class="deco-circle deco-circle--4"></span>
-      </div>
+      <aside class="section-deco section-deco--preset-c" data-theme="dark" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span><span class="deco-ring r4"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg><svg class="deco-bloom b2"><use href="#bloom"/></svg>
+      </aside>
       <div class="container">
         <div class="wishes-grid">
           <div class="wish-card reveal">
@@ -263,6 +282,10 @@
 
     <!-- Детали -->
     <section class="section section--cream details-section">
+      <aside class="section-deco section-deco--preset-b" data-theme="light" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg>
+      </aside>
       <div class="container">
         <div class="section-inner reveal">
           <h2 class="section-title script">Детали</h2>
@@ -300,6 +323,10 @@
 
     <!-- Анкета -->
     <section class="section section--green form-section" id="rsvp">
+      <aside class="section-deco section-deco--preset-a" data-theme="dark" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span><span class="deco-ring r4"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg><svg class="deco-bloom b2"><use href="#bloom"/></svg>
+      </aside>
       <div class="container">
         <div class="section-inner reveal">
           <h2 class="section-title script">Анкета гостя</h2>
