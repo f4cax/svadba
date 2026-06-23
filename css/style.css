@@ -359,15 +359,35 @@ body.intro-open {
   z-index: 2;
 }
 
-.floral-divider {
-  height: 40px;
-  background: linear-gradient(to bottom, var(--green-dark), var(--cream));
-  margin-top: 60px;
+/* ===== INVITE → COUNTDOWN TRANSITION ===== */
+.invite-section {
+  position: relative;
+  padding-bottom: 96px;
+}
+
+.invite-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px;
+  background: linear-gradient(to bottom, var(--green-dark) 0%, var(--cream) 100%);
+  pointer-events: none;
 }
 
 /* ===== COUNTDOWN ===== */
 .countdown-section {
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: -1px;
+  padding-top: 72px;
+}
+
+.countdown-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .countdown-label {
@@ -849,8 +869,10 @@ body.intro-open {
 .footer-bg {
   position: absolute;
   inset: 0;
+  background-image: url('../assets/photos/фото1.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 28%;
+  background-repeat: no-repeat;
 }
 
 .footer-overlay {
@@ -946,31 +968,33 @@ body.intro-open {
   animation: spinSlow 25s linear infinite reverse;
 }
 
-.deco-circle--5 {
-  width: 200px;
-  height: 200px;
-  top: 10%;
-  left: -60px;
-  border-color: rgba(255, 255, 255, 0.15);
-  animation: spinSlow 30s linear infinite;
+.deco-circles--countdown .deco-circle {
+  border-color: rgba(27, 48, 34, 0.1);
 }
 
-.deco-circle--6 {
+.deco-circle--c1 {
+  width: 160px;
+  height: 160px;
+  top: 8%;
+  right: -40px;
+  animation: spinSlow 26s linear infinite;
+}
+
+.deco-circle--c2 {
   width: 100px;
   height: 100px;
-  bottom: 25%;
-  right: 10%;
-  border-color: rgba(255, 255, 255, 0.12);
+  bottom: 18%;
+  left: -20px;
   animation: spinSlow 20s linear infinite reverse;
 }
 
-.deco-circle--7 {
-  width: 60px;
-  height: 60px;
-  top: 40%;
-  right: 25%;
-  background: rgba(255, 255, 255, 0.04);
-  animation: floatCircle 6s ease-in-out infinite;
+.deco-circle--c3 {
+  width: 70px;
+  height: 70px;
+  top: 45%;
+  right: 12%;
+  background: rgba(27, 48, 34, 0.04);
+  animation: floatCircle 7s ease-in-out infinite;
 }
 
 .deco-flower {
@@ -992,10 +1016,6 @@ body.intro-open {
   bottom: 60px;
   right: -30px;
   animation: spinSlow 35s linear infinite reverse;
-}
-
-.deco-circles--footer {
-  z-index: 1;
 }
 
 @keyframes spinSlow {
