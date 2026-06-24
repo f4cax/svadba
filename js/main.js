@@ -132,35 +132,37 @@
     reveals.forEach((el) => observer.observe(el));
   }
 
-  rsvpForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const submitBtn = document.getElementById('submit-btn');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Отправляем...';
-    formStatus.textContent = '';
-    formStatus.className = 'form-note';
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Отправляем...';
+      formStatus.textContent = '';
+      formStatus.className = 'form-note';
 
-    try {
-      const formData = new FormData(rsvpForm);
-      const response = await fetch(rsvpForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
-      });
+      try {
+        const formData = new FormData(rsvpForm);
+        const response = await fetch(rsvpForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        });
 
-      if (response.ok) {
-        formStatus.textContent = 'Спасибо! Ваша анкета отправлена.';
-        formStatus.className = 'form-note success';
-        rsvpForm.reset();
-      } else {
-        throw new Error('Server error');
+        if (response.ok) {
+          formStatus.textContent = 'Спасибо! Ваша анкета отправлена.';
+          formStatus.className = 'form-note success';
+          rsvpForm.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        formStatus.textContent = 'Не удалось отправить. Попробуйте ещё раз или напишите на dians.ts.29.09@gmail.com';
+        formStatus.className = 'form-note error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Отправить анкету';
       }
-    } catch {
-      formStatus.textContent = 'Не удалось отправить. Попробуйте ещё раз или напишите на dians.ts.29.09@gmail.com';
-      formStatus.className = 'form-note error';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Отправить анкету';
-    }
-  });
+    });
+  }
 })();

@@ -574,6 +574,14 @@ body.intro-open {
   margin-bottom: 10px;
 }
 
+.venue-line {
+  margin-bottom: 4px;
+}
+
+.venue-line--name {
+  margin-bottom: 4px;
+}
+
 .venue-line--region {
   font-size: clamp(14px, 3vw, 16px);
   opacity: 0.75;
@@ -638,10 +646,6 @@ body.intro-open {
 /* ===== DRESS CODE ===== */
 .dresscode-wrap {
   overflow: hidden;
-}
-
-.dresscode-text {
-  padding-bottom: 56px;
 }
 
 .dresscode-photo-block {
@@ -773,6 +777,13 @@ body.intro-open {
 }
 
 /* ===== ORGANIZER ===== */
+.organizer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .organizer-btn {
   display: block;
   max-width: 280px;

@@ -183,7 +183,10 @@
         <div class="section-inner reveal">
           <h2 class="section-title script">Место проведения</h2>
           <div class="venue-text">
-            <p>Трогательная церемония и уютный вечер пройдут в г. Нальчик, ресторан «White River Hall», ул. Биттирова, 100.</p>
+            <p>Трогательная церемония и уютный вечер пройдут:</p>
+            <p class="venue-line">г. Нальчик</p>
+            <p class="venue-line venue-line--name">ресторан «White River Hall»</p>
+            <p class="venue-line">ул. Биттирова, 100</p>
             <p class="venue-line--region">Кабардино-Балкарская Республика, микрорайон Долинск</p>
           </div>
           <a href="https://yandex.ru/maps/org/uayt_river_kholl/40581730526?si=2m25xadxft90k256hy0t1r3v94" target="_blank" rel="noopener" class="btn btn--light">Посмотреть на карте</a>
@@ -203,7 +206,7 @@
     </section>
 
     <!-- Тайминг -->
-    <section class="section section--cream timeline-section section-fade section-fade--from-green section-fade--to-green">
+    <section class="section section--cream timeline-section section-fade section-fade--from-green section-fade--to-cream">
       <aside class="section-deco section-deco--preset-a section-deco--rich" data-theme="light" aria-hidden="true">
         <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span><span class="deco-ring r4"></span>
         <svg class="deco-bloom b1"><use href="#bloom"/></svg><svg class="deco-bloom b2"><use href="#bloom"/></svg>
@@ -247,26 +250,8 @@
 
     <!-- Дресс-код -->
     <div class="dresscode-wrap">
-      <section class="section section--green dresscode-text section-fade section-fade--to-cream">
-        <div class="container">
-          <div class="section-inner reveal">
-            <h2 class="section-title script">Дресс-код</h2>
-            <p class="section-text">
-              Мы рады сообщить, что дресс-кода на нашей свадьбе не будет. Тем не менее, мы просим
-              воздержаться от ярких цветов и броских принтов. Будем очень рады, если отдадите
-              предпочтение спокойным и нейтральным тонам.
-            </p>
-            <div class="color-palette">
-              <span class="color-swatch" style="--swatch: #1B3022" title="Тёмно-зелёный"></span>
-              <span class="color-swatch" style="--swatch: #4A6741" title="Травянистый"></span>
-              <span class="color-swatch" style="--swatch: #F5F3EE" title="Белый"></span>
-              <span class="color-swatch" style="--swatch: #C8BFB0" title="Бежевый"></span>
-            </div>
-          </div>
-        </div>
-      </section>
       <div class="dresscode-photo-block">
-        <img src="assets/photos/дресскод.jpg" alt="Пример стиля нарядов" class="dresscode-photo" loading="lazy">
+        <img src="assets/photos/дресскод1.jpg" alt="Дресс-код — пример стиля нарядов" class="dresscode-photo" loading="lazy">
       </div>
     </div>
 
@@ -332,7 +317,7 @@
       <div class="organizer-bg" style="background-image: url('assets/photos/организатор.jpg')"></div>
       <div class="organizer-overlay"></div>
       <div class="container">
-        <div class="section-inner reveal">
+        <div class="section-inner reveal organizer-inner">
           <h2 class="section-title script">Организатор</h2>
           <p class="section-text">
             Если Вы подготовили для нас сюрприз или в случае возникновения вопросов,
@@ -358,11 +343,11 @@
           </p>
         </div>
 
-        <form id="rsvp-form" class="rsvp-form reveal" action="https://formsubmit.co/dians.ts.29.09@gmail.com" method="POST">
+        <form id="rsvp-form" class="rsvp-form reveal" action="https://formsubmit.co/ajax/dians.ts.29.09@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Анкета гостя — свадьба Тамерлан & Диана">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" style="display:none">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
           <div class="form-group">
             <label>Планируете ли Вы присутствовать на свадьбе? *</label>
@@ -374,7 +359,7 @@
 
           <div class="form-group">
             <label for="name">Ваши имя и фамилия *</label>
-            <input type="text" id="name" name="Имя и фамилия" required placeholder="Иван Иванов">
+            <input type="text" id="name" name="Имя и фамилия" required placeholder="Иван Иванов" autocomplete="name">
           </div>
 
           <div class="form-group">
