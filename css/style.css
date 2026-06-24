@@ -362,72 +362,42 @@ body.intro-open {
 }
 
 /* ===== SECTION COLOR FADES ===== */
-.section-fade--to-cream::after,
-.section-fade--to-green::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: clamp(80px, 18vw, 140px);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.section-fade--to-cream::after {
+/* Один градиент на границу — только в нижней части фона, без наложения */
+.section--green.section-fade--to-cream {
   background: linear-gradient(
     180deg,
-    transparent 0%,
-    rgba(245, 243, 238, 0.35) 45%,
+    var(--green-dark) 0%,
+    var(--green-dark) 76%,
+    #243a2e 84%,
+    #4d6358 90%,
+    #849088 95%,
+    #b8b8ae 98%,
     var(--cream) 100%
   );
 }
 
-.section-fade--to-green::after {
+.section--cream.section-fade--to-green {
   background: linear-gradient(
     180deg,
-    transparent 0%,
-    rgba(27, 48, 34, 0.35) 45%,
+    var(--cream) 0%,
+    var(--cream) 76%,
+    #d4d8d0 84%,
+    #8a968c 90%,
+    #526658 95%,
+    #304a3a 98%,
     var(--green-dark) 100%
   );
 }
 
+.section--green.section-fade--to-cream::after,
+.section--cream.section-fade--to-green::after,
 .section-fade--from-green::before,
 .section-fade--from-cream::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -1px;
-  height: clamp(72px, 16vw, 120px);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.section-fade--from-green::before {
-  background: linear-gradient(
-    180deg,
-    var(--green-dark) 0%,
-    rgba(27, 48, 34, 0.45) 55%,
-    transparent 100%
-  );
-}
-
-.section-fade--from-cream::before {
-  background: linear-gradient(
-    180deg,
-    var(--cream) 0%,
-    rgba(245, 243, 238, 0.45) 55%,
-    transparent 100%
-  );
+  display: none;
 }
 
 .invite-section {
   padding-bottom: 72px;
-}
-
-.invite-section::after {
-  display: none;
 }
 
 .countdown-section {
