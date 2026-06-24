@@ -15,7 +15,12 @@
   let isUnlocking = false;
   let touchStartY = 0;
 
-  openBtn.addEventListener('click', openInvitation);
+  openBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openInvitation();
+  });
+
+  unlockCurtain.addEventListener('click', openInvitation);
 
   unlockCurtain.addEventListener('touchstart', (e) => {
     touchStartY = e.touches[0].clientY;

@@ -38,16 +38,10 @@
     <div class="unlock-bg" style="background-image: url('assets/photos/фото.jpg')"></div>
     <div class="unlock-curtain" id="unlock-curtain">
       <div class="unlock-content">
-        <p class="unlock-label">Приглашение на свадьбу</p>
-        <p class="unlock-names script">Тамерлан <span>&</span> Диана</p>
-        <p class="unlock-date">26 · 09 · 2026</p>
-        <p class="unlock-hint">Разблокируйте приглашение</p>
-        <button id="open-btn" class="unlock-swipe-btn" type="button" aria-label="Разблокировать приглашение">
-          <span class="unlock-swipe-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-          </span>
-          <span>Листайте вверх</span>
+        <button id="open-btn" class="unlock-lock-btn" type="button" aria-label="Разблокировать приглашение">
+          <span class="unlock-lock-icon" aria-hidden="true">🔓</span>
         </button>
+        <p class="unlock-hint">Разблокируйте приглашение</p>
       </div>
     </div>
   </div>
@@ -97,7 +91,7 @@
     </section>
 
     <!-- Обратный отсчёт -->
-    <section class="section section--cream countdown-section section-fade section-fade--from-green">
+    <section class="section section--cream countdown-section section-fade section-fade--from-green section-fade--to-green">
       <aside class="section-deco section-deco--preset-b" data-theme="light" aria-hidden="true">
         <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span><span class="deco-ring r4"></span>
         <svg class="deco-bloom b1"><use href="#bloom"/></svg>
@@ -174,7 +168,7 @@
     </section>
 
     <!-- Место -->
-    <section class="section section--green location-section section-fade section-fade--to-cream">
+    <section class="section section--green location-section section-fade section-fade--from-cream section-fade--to-cream">
       <aside class="section-deco section-deco--preset-c" data-theme="dark" aria-hidden="true">
         <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span>
         <svg class="deco-bloom b1"><use href="#bloom"/></svg><svg class="deco-bloom b2"><use href="#bloom"/></svg>
@@ -249,14 +243,35 @@
     </section>
 
     <!-- Дресс-код -->
-    <div class="dresscode-wrap">
-      <div class="dresscode-photo-block">
-        <img src="assets/photos/дресскод.jpg" alt="Дресс-код — пример стиля нарядов" class="dresscode-photo" loading="lazy">
+    <section class="section section--cream dresscode-section section-fade section-fade--to-green">
+      <aside class="section-deco section-deco--preset-b" data-theme="light" aria-hidden="true">
+        <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span>
+        <svg class="deco-bloom b1"><use href="#bloom"/></svg>
+      </aside>
+      <div class="container">
+        <div class="section-inner reveal dresscode-inner">
+          <h2 class="dresscode-title">Дресс-код</h2>
+          <p class="dresscode-text">
+            Мы рады сообщить, что дресс-кода на нашей свадьбе не будет. Тем не менее, мы просим
+            воздержаться от ярких цветов и броских принтов. Будем очень рады, если отдадите
+            предпочтение спокойным и нейтральным тонам.
+          </p>
+          <div class="dresscode-palette" aria-label="Рекомендуемые оттенки">
+            <span class="dresscode-swatch" style="--swatch: #B8A088" title="Бежево-коричневый"></span>
+            <span class="dresscode-swatch" style="--swatch: #E5DDD0" title="Кремовый"></span>
+            <span class="dresscode-swatch" style="--swatch: #C5C2BC" title="Светло-серый"></span>
+            <span class="dresscode-swatch" style="--swatch: #B5C4B8" title="Шалфейный"></span>
+            <span class="dresscode-swatch" style="--swatch: #B8CCD4" title="Пыльно-голубой"></span>
+            <span class="dresscode-swatch" style="--swatch: #D4C8D8" title="Лавандовый"></span>
+            <span class="dresscode-swatch" style="--swatch: #E8C8C8" title="Пудрово-розовый"></span>
+          </div>
+          <img src="assets/photos/dresscode-models.png" alt="Примеры нарядов в пастельных тонах" class="dresscode-models" loading="lazy">
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Пожелания -->
-    <section class="section section--green wishes-section section-fade section-fade--to-cream">
+    <section class="section section--green wishes-section section-fade section-fade--from-cream section-fade--to-cream">
       <aside class="section-deco section-deco--preset-c" data-theme="dark" aria-hidden="true">
         <span class="deco-ring r1"></span><span class="deco-ring r2"></span><span class="deco-ring r3"></span><span class="deco-ring r4"></span>
         <svg class="deco-bloom b1"><use href="#bloom"/></svg><svg class="deco-bloom b2"><use href="#bloom"/></svg>

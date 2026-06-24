@@ -80,17 +80,19 @@ body.intro-open {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(27, 48, 34, 0.15) 0%,
-    rgba(27, 48, 34, 0.55) 35%,
-    var(--green-dark) 58%,
+    rgba(27, 48, 34, 0.08) 0%,
+    rgba(27, 48, 34, 0.02) 28%,
+    rgba(27, 48, 34, 0.45) 58%,
+    rgba(27, 48, 34, 0.88) 78%,
     var(--green-dark) 100%
   );
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: clamp(48px, 12vh, 96px);
+  padding-bottom: clamp(72px, 16vh, 120px);
   transition: transform 1.1s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
+  cursor: pointer;
 }
 
 .unlock-screen.unlocked .unlock-curtain {
@@ -102,80 +104,45 @@ body.intro-open {
   color: var(--white);
   padding: 24px;
   width: 100%;
+  pointer-events: none;
 }
 
-.unlock-label {
-  font-family: var(--font-sans);
-  font-size: clamp(13px, 3.2vw, 16px);
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  font-weight: 500;
+.unlock-lock-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
   margin-bottom: 20px;
-  opacity: 0.95;
+  background: none;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.3s ease;
 }
 
-.unlock-names {
-  font-size: clamp(44px, 11vw, 72px);
-  line-height: 1.1;
-  margin-bottom: 10px;
+.unlock-lock-btn:hover {
+  transform: scale(1.08);
 }
 
-.unlock-names span {
-  font-size: 0.55em;
-  opacity: 0.85;
+.unlock-lock-icon {
+  font-size: 42px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+  animation: lockPulse 2.4s ease-in-out infinite;
 }
 
-.unlock-date {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  letter-spacing: 0.32em;
-  opacity: 0.75;
-  margin-bottom: 36px;
+@keyframes lockPulse {
+  0%, 100% { transform: translateY(0); opacity: 0.92; }
+  50% { transform: translateY(-4px); opacity: 1; }
 }
 
 .unlock-hint {
   font-family: var(--font-serif);
-  font-size: clamp(18px, 4vw, 22px);
+  font-size: clamp(18px, 4.2vw, 24px);
   font-weight: 300;
-  margin-bottom: 28px;
-  opacity: 0.9;
-}
-
-.unlock-swipe-btn {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  background: none;
-  border: none;
-  color: var(--white);
-  cursor: pointer;
-  font-family: var(--font-sans);
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  opacity: 0.8;
-  transition: opacity 0.3s;
-}
-
-.unlock-swipe-btn:hover {
-  opacity: 1;
-}
-
-.unlock-swipe-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: bounce 2s ease-in-out infinite;
-}
-
-.unlock-swipe-icon svg {
-  width: 22px;
-  height: 22px;
+  opacity: 0.92;
+  letter-spacing: 0.02em;
 }
 
 /* ===== MUSIC TOGGLE ===== */
@@ -401,31 +368,58 @@ body.intro-open {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 28px;
+  bottom: -1px;
+  height: clamp(80px, 18vw, 140px);
   pointer-events: none;
   z-index: 1;
 }
 
 .section-fade--to-cream::after {
-  background: linear-gradient(180deg, transparent 0%, var(--cream) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(245, 243, 238, 0.35) 45%,
+    var(--cream) 100%
+  );
 }
 
 .section-fade--to-green::after {
-  background: linear-gradient(180deg, transparent 0%, var(--green-dark) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(27, 48, 34, 0.35) 45%,
+    var(--green-dark) 100%
+  );
 }
 
-.section-fade--from-green::before {
+.section-fade--from-green::before,
+.section-fade--from-cream::before {
   content: '';
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
-  height: 20px;
+  top: -1px;
+  height: clamp(72px, 16vw, 120px);
   pointer-events: none;
   z-index: 1;
-  background: linear-gradient(180deg, var(--green-dark) 0%, transparent 100%);
-  opacity: 0.35;
+}
+
+.section-fade--from-green::before {
+  background: linear-gradient(
+    180deg,
+    var(--green-dark) 0%,
+    rgba(27, 48, 34, 0.45) 55%,
+    transparent 100%
+  );
+}
+
+.section-fade--from-cream::before {
+  background: linear-gradient(
+    180deg,
+    var(--cream) 0%,
+    rgba(245, 243, 238, 0.45) 55%,
+    transparent 100%
+  );
 }
 
 .invite-section {
@@ -644,24 +638,57 @@ body.intro-open {
 }
 
 /* ===== DRESS CODE ===== */
-.dresscode-wrap {
-  overflow: hidden;
+.dresscode-section {
+  padding-top: clamp(64px, 12vw, 96px);
+  padding-bottom: clamp(72px, 14vw, 108px);
 }
 
-.dresscode-photo-block {
-  background: var(--cream);
-  padding: 32px 24px 48px;
+.dresscode-inner {
+  text-align: center;
+}
+
+.dresscode-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #0f1a14;
+  margin-bottom: 24px;
+}
+
+.dresscode-text {
+  font-size: clamp(17px, 3.6vw, 19px);
+  line-height: 1.75;
+  color: #1a2e22;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.dresscode-palette {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 2.8vw, 18px);
+  margin: 36px auto 40px;
+  flex-wrap: wrap;
+  max-width: 420px;
 }
 
-.dresscode-photo {
+.dresscode-swatch {
+  width: clamp(34px, 8.5vw, 46px);
+  height: clamp(34px, 8.5vw, 46px);
+  border-radius: 50%;
+  background: var(--swatch);
+  box-shadow: 0 2px 8px rgba(27, 48, 34, 0.1);
+}
+
+.dresscode-models {
   width: 100%;
-  max-width: 560px;
+  max-width: 640px;
   height: auto;
   display: block;
-  border-radius: 2px;
-  box-shadow: 0 8px 32px rgba(27, 48, 34, 0.12);
+  margin: 0 auto;
 }
 
 .organizer-bg {
