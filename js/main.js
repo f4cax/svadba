@@ -3,6 +3,7 @@
   const MUSIC_START_SEC = 32;
 
   const introScreen = document.getElementById('intro-screen');
+  const unlockCurtain = document.getElementById('unlock-curtain');
   const openBtn = document.getElementById('open-btn');
   const mainContent = document.getElementById('main-content');
   const musicToggle = document.getElementById('music-toggle');
@@ -11,20 +12,36 @@
   const formStatus = document.getElementById('form-status');
 
   let musicPlaying = false;
+  let isUnlocking = false;
+  let touchStartY = 0;
 
-  // --- Intro screen ---
   openBtn.addEventListener('click', openInvitation);
 
+  unlockCurtain.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  unlockCurtain.addEventListener('touchend', (e) => {
+    const deltaY = touchStartY - e.changedTouches[0].clientY;
+    if (deltaY > 50) openInvitation();
+  }, { passive: true });
+
   function openInvitation() {
-    introScreen.classList.add('hidden');
-    mainContent.hidden = false;
-    document.body.classList.add('intro-open');
-    musicToggle.hidden = false;
-    startMusic();
-    initRevealAnimations();
+    if (isUnlocking) return;
+    isUnlocking = true;
+
+    introScreen.classList.add('unlocked');
+
+    setTimeout(() => {
+      introScreen.classList.add('hidden');
+      mainContent.hidden = false;
+      document.body.classList.add('intro-open');
+      musicToggle.hidden = false;
+      startMusic();
+      initRevealAnimations();
+    }, 1100);
   }
 
-  // --- Music ---
   musicToggle.addEventListener('click', toggleMusic);
 
   function startMusic() {
@@ -73,7 +90,6 @@
     bgMusic.play();
   });
 
-  // --- Countdown ---
   function updateCountdown() {
     const now = new Date();
     const diff = WEDDING_DATE - now;
@@ -101,7 +117,6 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // --- Scroll reveal ---
   function initRevealAnimations() {
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(
@@ -117,7 +132,6 @@
     reveals.forEach((el) => observer.observe(el));
   }
 
-  // --- Form submission via AJAX ---
   rsvpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const submitBtn = document.getElementById('submit-btn');
